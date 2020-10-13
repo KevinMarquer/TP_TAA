@@ -147,9 +147,16 @@ public class ServletKanban extends HttpServlet{
 				sect = i;
 			}
 		}
-		
+		User us;
 		//User us = new User();
-		User us  = userdao.findUserbyName(request.getParameter("firstName"));
+		if(userdao.userExistbyName(request.getParameter("firstName"))) {
+			 us  = userdao.findUserbyName(request.getParameter("firstName"));
+		}
+		else {	//version : on créer s'il n'existe pas
+			us  = new User(request.getParameter("firstName"));
+			userdao.save(us);
+		}
+		
 		
 		
 		Carte carte = new Carte(sect, us, request.getParameter("tache"));

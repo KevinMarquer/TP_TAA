@@ -26,6 +26,18 @@ public class UserDao extends AbstractJpaDao<Long, User>{
 	}
 	
 	
+	public boolean userExistbyName(String name) {
+		boolean recherche = false;
+		UserDao userdao = new UserDao();
+		for(User user : userdao.findAll()) {
+			if(name.equals(user.getFirstName())) {
+				recherche = true;
+				break;
+			}
+		}
+		return recherche;
+	}
+	
 	public User findUserbyName(String name) {
 		UserDao userdao = new UserDao();
 		User uresult = new User();

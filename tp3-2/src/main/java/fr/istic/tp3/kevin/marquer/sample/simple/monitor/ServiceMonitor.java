@@ -32,3 +32,4 @@ public class ServiceMonitor {
 	public void logServiceAccess(JoinPoint joinPoint) {
 		System.out.println("Completed: " + joinPoint);
 	}
+}

@@ -1,0 +1,12 @@
+fr/istic/tp3/kevin/marquer/sample/simple/store/IFastLane.class
+fr/istic/tp3/kevin/marquer/sample/simple/store/IJustHaveALook.class
+fr/istic/tp3/kevin/marquer/sample/simple/bank/Ibank.class
+fr/istic/tp3/kevin/marquer/sample/simple/provider/Iprovider.class
+fr/istic/tp3/kevin/marquer/sample/simple/client/Client.class
+fr/istic/tp3/kevin/marquer/sample/simple/store/Store.class
+fr/istic/tp3/kevin/marquer/sample/simple/provider/Provider.class
+fr/istic/tp3/kevin/marquer/sample/simple/bank/Bank.class
+fr/istic/tp3/kevin/marquer/sample/simple/client/IClient.class
+fr/istic/tp3/kevin/marquer/sample/simple/SampleSimpleApplication.class
+fr/istic/tp3/kevin/marquer/sample/simple/store/ILane.class
+fr/istic/tp3/kevin/marquer/sample/simple/client/IRun.class
