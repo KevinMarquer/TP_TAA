@@ -35,7 +35,7 @@ public class Kanban {
 	}
 
 	
-	@OneToMany
+	@OneToMany(mappedBy = "kanban", cascade = CascadeType.PERSIST)
 	public List<Section> getSections(){
 		return this.sections;
 	}

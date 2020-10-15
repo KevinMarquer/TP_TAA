@@ -30,14 +30,15 @@ public class JpaTest {
     public static void main(String[] args) {
         EntityManagerFactory factory = Persistence
                 .createEntityManagerFactory("dev");
+        
         EntityManager manager = factory.createEntityManager();
         
         JpaTest test = new JpaTest(manager);
         
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
+        
         try {
-           
            test.createCarte();
         
         } catch (Exception e) {
@@ -74,7 +75,6 @@ public class JpaTest {
     	if(numOfCartes == 0) {
     		User user = new User("Dan");
     		manager.persist(user);
-    		
     		Kanban kanban = new Kanban();
     		manager.persist(kanban);
     		Section attente = new Section("attente",kanban);
@@ -83,7 +83,6 @@ public class JpaTest {
     		manager.persist(attente);
     		manager.persist(encours);
     		manager.persist(fini);
-    		
     		Carte carte1 = new Carte(attente,user,"Test");
     		manager.persist(carte1);
     		Carte carte2 = new Carte(encours,user,"Correction");

@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Section {
 
 	private Long id;
@@ -25,12 +27,10 @@ public class Section {
 
 	public Section(String nom) {
 		this.nom = nom;
-		this.listCarte = new ArrayList<Carte>();
 	}
 
 	public Section(String nom, Kanban kanban) {
 		this.nom = nom;
-		this.listCarte = new ArrayList<Carte>();
 		this.kanban=kanban;
 	}
 	
