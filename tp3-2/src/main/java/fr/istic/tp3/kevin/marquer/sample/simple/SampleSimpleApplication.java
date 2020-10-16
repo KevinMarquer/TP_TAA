@@ -1,5 +1,7 @@
 package fr.istic.tp3.kevin.marquer.sample.simple;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import fr.istic.tp3.kevin.marquer.sample.simple.client.IRun;
 
 @SpringBootApplication
-public class SampleSimpleApplication implements CommandLineRunner{
+public class SampleSimpleApplication implements CommandLineRunner {
 
 	@Autowired
 	private IRun iRun;

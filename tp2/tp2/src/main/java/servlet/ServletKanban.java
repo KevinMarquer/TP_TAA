@@ -147,22 +147,25 @@ public class ServletKanban extends HttpServlet{
 				sect = i;
 			}
 		}
-		User us;
+		
 		//User us = new User();
 		if(userdao.userExistbyName(request.getParameter("firstName"))) {
-			 us  = userdao.findUserbyName(request.getParameter("firstName"));
+			User us  = userdao.findUserbyName(request.getParameter("firstName"));
+			Carte carte = new Carte(sect, us, request.getParameter("tache"));
+			carte.setUser(us);
+			carte.setSection(sect);
+			cartedao.save(carte);
 		}
 		else {	//version : on créer s'il n'existe pas
-			us  = new User(request.getParameter("firstName"));
+			User us  = new User(request.getParameter("firstName"));
 			userdao.save(us);
+			Carte carte = new Carte(sect, us, request.getParameter("tache"));
+			carte.setUser(us);
+			carte.setSection(sect);
+			cartedao.save(carte);
 		}
 		
 		
-		
-		Carte carte = new Carte(sect, us, request.getParameter("tache"));
-		carte.setUser(us);
-		carte.setSection(sect);
-		cartedao.save(carte);
 		
 		
 	    response.sendRedirect("/tablekanban");

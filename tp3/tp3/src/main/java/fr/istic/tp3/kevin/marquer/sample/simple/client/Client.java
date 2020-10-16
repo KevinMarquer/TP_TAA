@@ -26,6 +26,7 @@ public class Client implements IRun, IClient {
 		System.out.println("Hello");
 		
 		System.out.println(ilook.getPrice("banane"));
+		
 	}
 
 }

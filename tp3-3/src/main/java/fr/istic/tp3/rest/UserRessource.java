@@ -1,4 +1,4 @@
-package fr.istic.tp2.rest;
+package fr.istic.tp3.rest;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,9 +11,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import fr.istic.tp2.dao.UserDao;
-import fr.istic.tp2.test.testjpa.domain.Carte;
-import fr.istic.tp2.test.testjpa.domain.User;
+import fr.istic.tp3.dao.UserDao;
+import fr.istic.tp3.test.testjpa.domain.Carte;
+import fr.istic.tp3.test.testjpa.domain.User;
 import io.swagger.v3.oas.annotations.Parameter;
 
 @Path("/user")
@@ -81,9 +81,9 @@ public class UserRessource {
 	      userId = String.valueOf(user.getId());
 	    }
 	    catch (Exception ex) {
-	      return "Erreur creation d'User: " + ex.toString();
+	      return "Erreur creation d'User : " + ex.toString();
 	    }
-	    return "User :"+ userId+ "a été créer";
+	    return "User :"+ userId+ " a été créer";
 	  }
 	
 }

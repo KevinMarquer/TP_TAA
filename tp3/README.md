@@ -1,3 +1,30 @@
+Kévin MARQUER
+
+#TAA
+
+#TP3
+(comprend les trois dossiers tp3 tp3-2, tp3-3)
+
+
+
+L'objectif du TP est pour la première partie,
+de maitriser l'injection de dépendance.
+
+On a Un application avec 4 acteurs et 2 scénarios
+(décris dans le TP)
+
+
+Cette partie est très simple à réaliser.
+Par contre le problème vient des paramètres Map refmag, ref et comptes :
+
+	Je n'arrive pas à mettre des données que se soit directement quand j'initialise le paramètre ou quand je met les donnée dans le fichier .properties
+
+Du coup, on se contentera de message ou on ne pourra pas tester la fonction, mais à priori le code est bon.
+
+
+Un exemple avec la classe Store :
+
+```java
 package fr.istic.tp3.kevin.marquer.sample.simple.store;
 
 import java.awt.List;
@@ -83,4 +110,63 @@ public class Store implements IFastLane, IJustHaveALook, ILane{
 	}
 	
 }
+```
+
+
+La classe Client contient la fonction run() qui sera appelé par SampleSimpleApplication :
+
+```java
+package fr.istic.tp3.kevin.marquer.sample.simple;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import fr.istic.tp3.kevin.marquer.sample.simple.client.IRun;
+
+@SpringBootApplication
+public class SampleSimpleApplication implements CommandLineRunner{
+
+	@Autowired
+	private IRun iRun;
+	
+	public void run(String... args) throws Exception {
+		this.iRun.run();
+		
+	}
+	
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(SampleSimpleApplication.class, args);
+	}
+	
+}
+```
+
+quand je lance SampleSimpleApplication j'obtient le resultat de la fonction run()
+(qui affiche le resultat de la fonction getPrice(x)
+(par contre vue le problème des Map, on ne trouve qu'un seul résultat 1)
+
+
+
+
+Pour la partie 2 du TP:
+
+dossier tp3-2
+
+J'avoue ne pas très bien comprendre comme ça se passe.
+
+En me basant sur le modèle donné, il faut ajouter la classe
+ServiceMonitor.
+Et je ne vois pas d'autre différence par rapport au premier modèle, si je lance SampleSimpleApplication, j'obtient le même résultat que pour la première version.
+Je pense n'avoir pas saisi ce qui fallait faire.
+
+
+
+#Partie 3
+
+
+Pour cette dernière partie, j'ai récuperer les Classes et leur équivalent Dao et Ressource et en recuperant l'example qui nous est donné (dont l'application.properties).
+
+Je n'arrive pas à le lancé.
 

@@ -17,4 +17,25 @@ import io.swagger.v3.oas.annotations.Parameter;
 @Produces({"application/json", "application/xml"})
 public class CarteRessource {
 
-}
+	CarteDao carteDao = new CarteDao();
+	
+	  @GET
+	  @Path("/{petId}")
+	  public Carte getCarteById(@PathParam("carteId") Long carteId)  {
+	      // return pet
+	      return new Carte();
+	  }
+
+	  @POST
+	  @Consumes("application/json")
+	  public Response addCarte(
+	      @Parameter(description = "Carte a ajouter ", required = true) Carte carte) {
+	    
+	    return Response.ok().entity("SUCCESS").build();
+	  }
+	  
+	  
+	}
+	
+	
+
